@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+  nforce = require("nforce"),
+  config = require("../config.js").config,
+  force = require("../lib/force.js");
+
+program
+  .version('0.0.1')
+
+program
+  .command('login')
+  .description('Logs into salesforce and returns an access token')
+  .action(function(){
+    force.login();
+});
+
+program
+  .command('query [sobject]')
+  .description('Queries for 5 records from the specified sObject.')
+  .action(function(sobject){
+    force.query(sobject);
+});
+
+program
+  .command('fetch [sobject] [id]')
+  .description('Fetches a specific record by id.')
+  .action(function(sobject, id){
+    force.fetch(sobject, id);
+});  
+
+program
+  .command('create [sobject] [name]')
+  .description('Inserts a new record with a name only.')
+  .action(function(sobject, name){
+    force.insert(sobject, name);
+});    
+
+program
+  .command('update [sobject] [id] [value]')
+  .description('Updates a specific record with value as its name.')
+  .action(function(sobject, id, value){
+    force.update(sobject, id, value);
+});  
+
+program.parse(process.argv);

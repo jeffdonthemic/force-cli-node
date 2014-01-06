@@ -1,0 +1,13 @@
+{
+  "author": "Jeff Douglas <jeff@jeffdouglas.com>",
+  "name": "force-cli-node",
+  "description": "A CLI for Force.com",
+  "version": "0.0.1",
+  "homepage": "http://blog.jeffdouglas.com",
+  "dependencies": {
+    "commander": "~2.1.0",
+    "nforce": "~0.6.2",
+    "q": "~0.9.7",
+    "request": "~2.30.0"
+  }
+}
