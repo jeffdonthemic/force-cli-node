@@ -9,3 +9,4 @@ You'll then need to enter your connection parameters into `config.js` for Force.
 To see the available commands run `bin/cli --help`.
 
 Note: each command initially authenticates to Force.com before running. You may want to cache the connection in redis to speed things up. I did not want to add this dependency which would have made it harder to get started.
+
